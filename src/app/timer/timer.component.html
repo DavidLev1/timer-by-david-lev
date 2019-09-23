@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Timer Component</title>
+</head>
+
+
+<body>
+  
+  <div id="whole-container">
+
+    <div id="options-container">
+      <input 
+        #timer
+        type="radio" 
+        name="count-option" 
+        value="timer-choice"
+        class="count-radio-option"
+        checked
+      > 
+      &nbsp;
+      <span class="text-near-count-radio-option"> Timer </span>  
+      &nbsp;
+  
+
+      <span id="options-separator"></span>
+      
+      <input 
+        #countDown
+        type="radio" 
+        name="count-option" 
+        value="countdown-choice"
+        class="count-radio-option"
+        (change)="onclickCountDownRadio($event)"
+      > 
+      &nbsp;
+      
+      <span class="text-near-count-radio-option" >
+        Countdown 
+      </span> 
+      
+    </div>
+  
+  
+    <div id="timer-container">
+      <div id="timer" #timer> {{passedMinutes}}:{{passedSeconds}} </div>
+  
+      <button 
+        type="button" 
+        class="timer-button timer-start-button"
+        (click)="onclickStartButton()" >
+        Start
+      </button>
+  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+  
+      <button 
+        type="button" 
+        class="timer-button timer-stop-button"
+        (click)="onclickStopButton()" >
+        Stop
+      </button>
+  
+      &nbsp;&nbsp;&nbsp;&nbsp;
+  
+      <button 
+        type="button" 
+        class="timer-button timer-reset-button"
+        (click)="onclickResetButton()" >
+        Reset
+      </button>
+      
+    </div>
+  
+  </div>
+
+</body>
+
+
+</html>
+
+
+
+
+

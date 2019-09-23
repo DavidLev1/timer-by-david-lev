@@ -1,0 +1,121 @@
+body, html {
+    padding-top: 1%;
+    /* height: 35rem; */
+    background-color: #9FECFF;
+    height: 100%;
+    padding-bottom: 1%;
+}
+
+
+#whole-container {
+    position: relative;
+    border: 3px solid #000; 
+     /* border: none; */
+    width: 94%; 
+    left: 1.5%;
+    /* padding-left: 3%;
+    padding-right: 3%; */
+    height: 15rem; 
+    text-align:center;  
+    border-radius: 20px;
+    background: #FFD5AB;
+    
+}
+
+
+#options-container {
+    /* align-items: left;
+    align-content: center; */
+    position: relative;
+    width: 90%;
+    left: 5%;
+    top: 2%;
+    height: 38%;
+    text-align: left;
+    border: solid 0.5px #FF8554;
+    border-radius: 17px;
+    background: #A0BAFF;
+}
+
+.count-radio-option {
+    margin-left: 10%;
+    transform: scale(1.4);  
+    margin-top: 0.8rem;
+}
+
+.text-near-count-radio-option {
+    font-size: 0.8rem;
+    color: black;
+}
+
+.from-time-input {
+    margin-left: 10%;
+    border: double 4px #72C5E8;
+    border-radius: 17px;
+    font-size: 0.6rem;
+    text-align: center;
+    width: 32%;
+    /* height: 1rem; */
+}
+
+
+#timer-container {
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+
+    position: relative;
+    top: 4%;
+    width: 90%;
+    left: 5%;
+    height: 50%;
+    text-align: center;
+    border: solid 3px #FF8554;
+    border-radius: 17px;
+    background: #BDFFD0;
+}
+
+
+#timer {
+    position: relative;
+    /* top: 2%; */
+    font-size: 4.5rem;
+    font-family: david;
+    font-weight: 400;
+    color: #0142FF;
+    width: 100%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.timer-button {
+    position: relative;
+    top: 0.2rem;
+    font-weight: 200;
+    padding: 3px 10px;
+    border-radius: 28px;
+    font-size: 13px;
+}
+.timer-button:hover {
+    border:5px double #EB8D06;
+    background-color:#EBDE65;
+    padding: 3px 11px;
+}
+.timer-start-button {
+    border:5px double #18ab29;
+    background-color:#44c767;
+}
+
+.timer-stop-button {
+    border:5px double #FF0601;
+    background-color:#FF93E9;
+}
+.timer-reset-button {
+    border:5px double #186DEB;
+    background-color:#94CDFF;
+}
+
