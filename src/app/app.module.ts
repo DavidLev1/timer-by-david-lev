@@ -13,7 +13,6 @@ const appRoutes: Routes = [
   { path: 'count-down', component: CountDownComponent}
 ];
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -93,5 +93,4 @@ export class TimerComponent implements
   padNumberTo2Digits(value): string {
     return String(value).padStart(2, '0');
   }
-
 }

@@ -154,4 +154,3 @@ export class CountDownComponent implements OnInit, OnDestroy {
     return String(value).padStart(2, '0');
   }
 }
-
