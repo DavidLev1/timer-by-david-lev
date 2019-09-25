@@ -67,7 +67,7 @@
     
       <div id="timer-container">
     
-        <div id="timer" #timer> {{currentMinutes}}:{{currentSeconds}} </div>
+        <div id="timer" #timer> {{currentMinutes | padTo2Digits}}:{{currentSeconds | padTo2Digits}} </div>
     
         <button 
           type="button" 

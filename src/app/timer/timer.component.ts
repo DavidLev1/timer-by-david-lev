@@ -48,8 +48,10 @@ export class TimerComponent implements
 
       this.intervalId = setInterval( () => {
         this.passedMilisecondsNum = Date.now() - this.startTime;
-        this.passedMinutes = this.padNumberTo2Digits(new Date(this.passedMilisecondsNum).getMinutes());
-        this.passedSeconds = this.padNumberTo2Digits(new Date(this.passedMilisecondsNum).getSeconds());
+        //this.passedMinutes = this.padNumberTo2Digits(new Date(this.passedMilisecondsNum).getMinutes());
+        this.passedMinutes = String(new Date(this.passedMilisecondsNum).getMinutes());
+        //this.passedSeconds = this.padNumberTo2Digits(new Date(this.passedMilisecondsNum).getSeconds());
+        this.passedSeconds = String(new Date(this.passedMilisecondsNum).getSeconds());
       }, 1000); 
     }
     // Start timer running from time it stopped 
@@ -58,8 +60,10 @@ export class TimerComponent implements
 
       this.intervalId = setInterval( () => {
         this.passedMilisecondsNum = Date.now() - this.startTime;
-        this.passedMinutes = this.padNumberTo2Digits(new Date(this.passedMilisecondsNum).getMinutes());
-        this.passedSeconds = this.padNumberTo2Digits(new Date(this.passedMilisecondsNum).getSeconds());
+        //this.passedMinutes = this.padNumberTo2Digits(new Date(this.passedMilisecondsNum).getMinutes());
+        this.passedMinutes = String(new Date(this.passedMilisecondsNum).getMinutes());
+        //this.passedSeconds = this.padNumberTo2Digits(new Date(this.passedMilisecondsNum).getSeconds());
+         this.passedSeconds = String(new Date(this.passedMilisecondsNum).getSeconds());
       }, 1000); 
     }
   }
@@ -89,8 +93,8 @@ export class TimerComponent implements
 
 
 
-  // Utils
-  padNumberTo2Digits(value): string {
-    return String(value).padStart(2, '0');
-  }
+  // // Utils
+  // padNumberTo2Digits(value): string {
+  //   return String(value).padStart(2, '0');
+  // }
 }

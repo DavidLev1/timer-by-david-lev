@@ -52,7 +52,7 @@ export class CountDownComponent implements OnInit, OnDestroy {
       this.falseTimeMessage = 'Enter Minutes (can be 0)';
       return false;
     }
-    if(this.minutesStartFrom < 0) {
+    if (this.minutesStartFrom < 0) {
       this.falseTimeMessage = "Can't be negative minutes value";
       return false;
     }
@@ -60,7 +60,7 @@ export class CountDownComponent implements OnInit, OnDestroy {
       this.falseTimeMessage = 'Enter Seconds (can be 0)';
       return false;
     }
-    if(this.secondsStartFrom < 0) {
+    if (this.secondsStartFrom < 0) {
       this.falseTimeMessage = "Can't be negative seconds value";
       return false;
     }
@@ -69,7 +69,7 @@ export class CountDownComponent implements OnInit, OnDestroy {
       return false;
     }
     if (this.minutesStartFrom === 0 && this.secondsStartFrom === 0) {
-      this.falseTimeMessage = "Nothing to countdown - 0 minutes and 0 seconds!";
+      this.falseTimeMessage = 'Nothing to countdown - 0 minutes and 0 seconds!';
       return false;
     }
     return true;
@@ -84,10 +84,12 @@ export class CountDownComponent implements OnInit, OnDestroy {
 
       this.intervalId = setInterval( () => {
         this.minutesRemained = Math.floor(this.totalRemainedSeconds/60);
-        this.currentMinutes = this.padNumberTo2Digits(String(this.minutesRemained));
+        // this.currentMinutes = this.padNumberTo2Digits(String(this.minutesRemained));
+        this.currentMinutes = String(this.minutesRemained);
 
         this.secondsRemained = this.totalRemainedSeconds % 60;
-        this.currentSeconds = this.padNumberTo2Digits(String(this.secondsRemained));
+        // this.currentSeconds = this.padNumberTo2Digits(String(this.secondsRemained));
+        this.currentSeconds = String(this.secondsRemained);
 
         if (this.totalRemainedSeconds === 0) {
           clearInterval(this.intervalId);
@@ -98,12 +100,12 @@ export class CountDownComponent implements OnInit, OnDestroy {
           this.totalRemainedSeconds = 0;
           this.totalPassedSeconds = 0;
           return;
-        } 
+        }
 
         this.totalPassedSeconds++;
         this.totalRemainedSeconds--;
       }, 1000);
-    } 
+    }
   }
 
 
@@ -116,7 +118,7 @@ export class CountDownComponent implements OnInit, OnDestroy {
     this.audioTimeOver = new Audio();
     this.audioTimeOver.src = './././assets/sound/timeover.mp3';
     this.audioTimeOver.load();
-    //this.audioTimeOver.muted = false;
+    // this.audioTimeOver.muted = false;
     this.audioTimeOver.volume = 0.8;
     this.audioTimeOver.play();
   }
@@ -124,12 +126,14 @@ export class CountDownComponent implements OnInit, OnDestroy {
 
 
   onclickStopButton(): void {
-    if (this.totalRemainedSeconds !== 0) clearInterval(this.intervalId);
+    if (this.totalRemainedSeconds !== 0) {
+      clearInterval(this.intervalId);
+    }
   }
 
 
   onclickResetButton(): void {
-    if(this.totalRemainedSeconds !== 0) {
+    if (this.totalRemainedSeconds !== 0) {
       clearInterval(this.intervalId);
       this.minutesStartFrom = null;
       this.secondsStartFrom = null;
@@ -138,19 +142,19 @@ export class CountDownComponent implements OnInit, OnDestroy {
       this.isInputsDisabled = false;
       this.totalRemainedSeconds = 0;
       this.totalPassedSeconds = 0;
-    } 
+    }
   }
 
   onclickTimerRadio(e) {
-    //console.log(e.target); 
+    // console.log(e.target);
     this.timerRadioElem.checked = true;
     this.countDownRadioElem.checked = false;
     this._router.navigate(['/']);
   }
 
 
-  // Utils
-  padNumberTo2Digits(value): string {
-    return String(value).padStart(2, '0');
-  }
+  // // Utils
+  // padNumberTo2Digits(value): string {
+  //   return String(value).padStart(2, '0');
+  // }
 }
